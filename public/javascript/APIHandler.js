@@ -14,7 +14,16 @@ class APIHandler {
       });
   }
 
-  getOneRegister() {}
+  getOneRegister(id) {
+    axios
+    .get(this.BASE_URL + "/characters" + id)
+    .then((results) => {
+      console.log("Results", results.data);
+    })
+    .catch((err) => {
+      console.log("error was found", err);
+    });
+  }
 
   createOneRegister() {}
 
