@@ -36,7 +36,19 @@ class APIHandler {
       });
   }
 
-  updateOneRegister() {}
+  updateOneRegister(information) {
+    let { id, name, occupation, weapon, cartoon } = information;
+    axios
+      .patch(this.BASE_URL + "/characters/" + id, {
+        name,
+        occupation,
+        weapon,
+        cartoon,
+      })
+      .then((results) => {
+        console.log("updated to this: ", results);
+      });
+  }
 
   deleteOneRegister() {}
 }
