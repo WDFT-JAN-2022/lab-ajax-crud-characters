@@ -50,5 +50,14 @@ class APIHandler {
       });
   }
 
-  deleteOneRegister() {}
+  deleteOneRegister(id) {
+    axios
+      .delete(this.BASE_URL + "/characters/" + id)
+      .then((results) => {
+        console.log("Results", results.data);
+      })
+      .catch((err) => {
+        console.log("error was found", err);
+      });
+  }
 }

@@ -21,6 +21,9 @@ window.addEventListener("load", () => {
     .getElementById("delete-one")
     .addEventListener("click", function (event) {
       event.preventDefault();
+      charactersAPI.deleteOneRegister(
+        document.getElementById("delete-element-id").value
+      );
     });
 
   document
