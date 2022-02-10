@@ -33,5 +33,13 @@ window.addEventListener("load", () => {
     .getElementById("new-character-form")
     .addEventListener("submit", function (event) {
       event.preventDefault();
+      charactersAPI.createOneRegister(
+        {
+        name: document.getElementById("newName").value,
+        occupation: document.getElementById("newOccupation").value,
+        weapon: document.getElementById("newWeapon").value,
+        cartoon: document.getElementById("newCartoon").value === "on",
+      }
+      );
     });
 });
